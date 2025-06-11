@@ -20,9 +20,7 @@
 // *********************************************************************** */
 #pragma once
 #include <string>
-#include <fstream>
 #include <iostream>
-#include <vector>
 #include <set>
 #include <map>
 
@@ -95,7 +93,7 @@ private:
 public:
 
   /**
-   * @brief get instance of constants singelton
+   * @brief get instance of constants singleton
    * @return instance of constants
    */
   static Constants& getInstance() {
@@ -107,7 +105,7 @@ public:
    * @brief Check if constants are loaded.
    * @return True if constants are loaded, false otherwise.
    */
-  bool isLoaded() { return loaded_; }
+  bool isLoaded() const { return loaded_; }
 
   /**
    * @brief Get a constant by key.
