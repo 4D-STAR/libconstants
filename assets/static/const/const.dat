@@ -467,3 +467,4 @@ R_jup                     Nominal Jupiter equatorial radius                     
 GM_earth                  Nominal Earth mass parameter                             3.98600400e+20 cm3 / s2              0.00000000e+00 IAU 2015 Resolution B 3                      
 M_earth                   Earth mass                                               5.97216787e+27 g                     1.34220095e+23 IAU 2015 Resolution B 3 + CODATA 2018        
 R_earth                   Nominal Earth equatorial radius                          6.37810000e+08 cm                    0.00000000e+00 IAU 2015 Resolution B 3                      
+MeV_to_erg                MeV to erg conversion factor                             1.60217663e-06 erg                   0.00000000e+00 Unit Conversion Factor
