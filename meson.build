@@ -33,3 +33,14 @@ subdir('assets/static')
 subdir('src')
 subdir('tests')
 
+pkg = import('pkgconfig')
+pkg.generate(
+    name: 'libconstants',
+    description: 'Physical Constants for SERiF and related projects',
+    version: meson.project_version(),
+    libraries: [libconst],
+    subdirs: ['libconstants'],
+    filebase: 'libconstants',
+    install_dir: join_paths(get_option('libdir'), 'pkgconfig')
+)
+
