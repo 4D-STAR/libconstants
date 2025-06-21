@@ -17,7 +17,7 @@
 class constTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        serif::constant::Constants::getInstance();
+        fourdst::constant::Constants::getInstance();
     }
 };
 
@@ -25,7 +25,7 @@ protected:
  * @test Verify default constructor initializes correctly.
  */
 TEST_F(constTest, DefaultConstructor) {
-    EXPECT_NO_THROW(serif::constant::Constants::getInstance());
+    EXPECT_NO_THROW(fourdst::constant::Constants::getInstance());
 }
 
 /**
@@ -33,14 +33,14 @@ TEST_F(constTest, DefaultConstructor) {
  */
 TEST_F(constTest, isLoaded) {
 
-    EXPECT_NO_THROW(serif::constant::Constants::getInstance().isLoaded());
+    EXPECT_NO_THROW(fourdst::constant::Constants::getInstance().isLoaded());
 }
 
 /**
  * @test Verify get method returns the correct constant.
  */
 TEST_F(constTest, GetMethod) {
-    serif::constant::Constants& obj = serif::constant::Constants::getInstance();
+    fourdst::constant::Constants& obj = fourdst::constant::Constants::getInstance();
     EXPECT_DOUBLE_EQ(obj.get("c").value, 2.99792458e10);
     EXPECT_EQ(obj.get("c").unit, "cm / s");
     EXPECT_DOUBLE_EQ(obj.get("c").uncertainty, 0.0);
@@ -51,7 +51,7 @@ TEST_F(constTest, GetMethod) {
  * @test Verify [] opperators returns the correct constant.
  */
 TEST_F(constTest, SubscriptOperator) {
-    serif::constant::Constants& obj = serif::constant::Constants::getInstance();
+    fourdst::constant::Constants& obj = fourdst::constant::Constants::getInstance();
     EXPECT_DOUBLE_EQ(obj["c"].value, 2.99792458e10);
     EXPECT_EQ(obj["c"].unit, "cm / s");
     EXPECT_DOUBLE_EQ(obj["c"].uncertainty, 0.0);
@@ -62,7 +62,7 @@ TEST_F(constTest, SubscriptOperator) {
  * @test Verify that the has method returns the correct values
  */
 TEST_F(constTest, HasMethod) {
-    serif::constant::Constants& obj = serif::constant::Constants::getInstance();
+    fourdst::constant::Constants& obj = fourdst::constant::Constants::getInstance();
 
     EXPECT_TRUE(obj.has("c"));
     EXPECT_FALSE(obj.has("c4"));
@@ -70,7 +70,7 @@ TEST_F(constTest, HasMethod) {
 }
 
 TEST_F(constTest, KeysMethod) {
-    serif::constant::Constants& obj = serif::constant::Constants::getInstance();
+    fourdst::constant::Constants& obj = fourdst::constant::Constants::getInstance();
     std::set<std::string> checkKeys;
     checkKeys.insert("c");
     checkKeys.insert("wienK");
@@ -99,7 +99,7 @@ TEST_F(constTest, KeysMethod) {
 }
 
 TEST_F(constTest, StreamOperator) {
-    serif::constant::Constants& obj = serif::constant::Constants::getInstance();
+    fourdst::constant::Constants& obj = fourdst::constant::Constants::getInstance();
     std::ostringstream os;
 
     os << obj.get("c");
