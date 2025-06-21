@@ -18,13 +18,10 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 # *********************************************************************** #
-project('libconstants', 'cpp', version: '0.0.1a', default_options: ['cpp_std=c++23'], meson_version: '>=1.5.0')
+project('libconstants', 'cpp', version: 'v1.0.5', default_options: ['cpp_std=c++23'], meson_version: '>=1.5.0')
 
 # Add default visibility for all C++ targets
 add_project_arguments('-fvisibility=default', language: 'cpp')
-
-# We disable these because of CppAD
-add_project_arguments('-Wno-bitwise-instead-of-logical', language: 'cpp')
 
 cpp = meson.get_compiler('cpp')
 
@@ -39,8 +36,8 @@ pkg.generate(
     description: 'Physical Constants for SERiF and related projects',
     version: meson.project_version(),
     libraries: [libconst],
-    subdirs: ['libconstants'],
-    filebase: 'libconstants',
+    subdirs: ['fourdst'],
+    filebase: 'fourdst_constants',
     install_dir: join_paths(get_option('libdir'), 'pkgconfig')
 )
 
