@@ -31,4 +31,5 @@ cpp = meson.get_compiler('cpp')
 subdir('assets/static')
 
 subdir('src')
+subdir('tests')
 
