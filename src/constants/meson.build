@@ -21,4 +21,4 @@ const_dep = declare_dependency(
 )
 
 # Make headers accessible
-install_headers(const_headers, subdir : '4DSSE/const')
+install_headers(const_headers, subdir : 'fourdst/constants')
