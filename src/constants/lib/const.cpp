@@ -27,7 +27,7 @@
 #include <set>
 
 
-#include "const.h"
+#include "fourdst/constants/const.h"
 #include "embedded_constants.h" // Generated at build time by meson
 
 namespace fourdst::constant {
