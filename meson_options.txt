@@ -1,0 +1,1 @@
+option('pkg-config', type: 'boolean', value: true, description: 'generate pkg-config file for libconstants (fourdst_constants.pc)')
