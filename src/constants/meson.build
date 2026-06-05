@@ -21,4 +21,4 @@ const_dep = declare_dependency(
 const_headers = files(
   'include/fourdst/constants/const.h'
 )
-install_headers(const_headers, subdir : 'fourdst/fourdst/constants')
+install_headers(const_headers, subdir : 'fourdst/constants')
