@@ -1,1 +1,3 @@
-option('pkg-config', type: 'boolean', value: true, description: 'generate pkg-config file for libconstants (fourdst_constants.pc)')
+option('pkg_config', type: 'boolean', value: true, description: 'generate pkg-config file for libconstants (fourdst_constants.pc)')
+option('build_tests', type: 'boolean', value: true, description: 'control if tests are built or not')
+option('build_examples', type: 'boolean', value: true, description: 'control if examples is built or not')

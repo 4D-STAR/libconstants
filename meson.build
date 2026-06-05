@@ -28,9 +28,16 @@ cpp = meson.get_compiler('cpp')
 subdir('assets/static')
 
 subdir('src')
-subdir('tests')
 
-if get_option('pkg-config')
+if get_option('build_tests')
+  subdir('tests')
+endif
+
+if get_option('build_examples')
+  subdir('examples')
+endif
+
+if get_option('pkg_config')
     message('Generating pkg-config file for libconstants...')
     pkg = import('pkgconfig')
     pkg.generate(
