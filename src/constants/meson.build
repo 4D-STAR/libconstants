@@ -5,14 +5,13 @@ const_sources = files(
 
 
 # Define the libconst library so it can be linked against by other parts of the build system
-fourdst_component_libdir = get_option('lib_install_dir') != '' ? get_option('lib_install_dir') : get_option('libdir')
 libconst = library('const',
     const_sources, 
     include_directories: include_directories('include'),
     cpp_args: ['-fvisibility=default'],
     dependencies: [const_data_dep],
     install : true,
-    install_dir: fourdst_component_libdir)
+    install_dir: constants_libdir)
 
 const_dep = declare_dependency(
     include_directories: include_directories('include'),
@@ -24,8 +23,4 @@ const_headers = files(
   'include/fourdst/constants/const.h'
 )
 
-
-constants_header_install_dir = get_option('header_install_dir') != '' \
-    ? get_option('header_install_dir') / 'fourdst' / 'constants' \
-    : get_option('includedir') / 'fourdst' / 'constants'
 install_headers(const_headers, install_dir: constants_header_install_dir)

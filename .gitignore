@@ -86,3 +86,4 @@ output/
 .idea/
 
 scratch/
+subprojects/.wraplock
